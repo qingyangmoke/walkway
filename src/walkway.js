@@ -126,7 +126,7 @@
     this.opts = opts;
     this.selector = opts.selector;
     this.duration = opts.duration || 500;
-    this.easing = EasingFunctions[opts.easing] || EasingFunctions.easeInOutCubic;
+    this.easing = (typeof opts.easing === 'function') ? opts.easing : (EasingFunctions[opts.easing] || EasingFunctions.easeInOutCubic);
     this.paths = this.getPaths();
     this.setInitialStyles();
     this.id = false;
